@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/base.css" type="text/css"/>
+  <link rel="stylesheet" href="css/main.css" type="text/css"/>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script src="jquery-1.12.0.js"></script>
+  <script src="tr.js"></script>
+
+  <title>Travel-Trace</title>
+</head>
+<body>
+  <div class="page-container">
+    <div class="header-section header">
+      <div class="logo-container"><a href="index.html"><div class="logo"></div></a></div>
+    </div>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <section class="section">
+      <div class="left">
+        <div id="list">
+          <div id="listCloseBtn" class="list-close">&#8597;</div>
+          <div class="profile-head">
+            <div class="profile">
+              <span class="prof-pic"><img class="profilepic" src="img/profilepic.png" title="Narayanan Perumba"><span>
+                <span class="prof-settings" data-value="notification"><img class="notifications" src="img/alert.png" title="Notifications"></span>
+                <span class="prof-settings" data-value="listitems"><img class="messages" src="img/messages.png" title="Messages"></span>
+                <span class="prof-settings" data-value="friends-list"><img id="friends" class="friends" src="img/friends.png" title="Messages"></span>
+
+                    </div>
+                  </div>
+                  <div class="left-box">
+                    <div class="left-box-child listitems">
+                      <div class="listhead">My Places</div>
+                      <div class="listitem">Copenhagen, Denmark</div>
+                      <div class="listitem">Zurich, Switzerland</div>
+                      <div class="listitem">Nuremburgh, Germany</div>
+                      <div class="listitem">Helsinki, Finland</div>
+                      <div class="listitem">Tallin, Estonia</div>
+                      <div class="listitem">St.Petersburgh, Russia</div>
+                      <div class="listitem">Brussels, Belgium</div>
+                      <div class="listitem">Paris, France</div>
+                    </div>
+
+                    <div class="left-box-child friends-list">
+                      <div class="listhead friends-head">Travel Friends</div>
+                      <div class="traveler-friend">
+                        <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Krish"></span><span class="traveler-name">Friend</span>
+                      </div>
+                      <div class="traveler-friend">
+                        <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Krish"></span><span class="traveler-name">Friend</span>
+                      </div>
+                      <div class="traveler-friend">
+                        <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Krish"></span><span class="traveler-name">Friend</span>
+                      </div>
+                      <div class="traveler-friend">
+                        <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Krish"></span><span class="traveler-name">Friend</span>
+                      </div>
+                      <div class="traveler-friend">
+                        <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Krish"></span><span class="traveler-name">Friend</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+              </div>
+              <div id="map"></div>
+              <!-- <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcgbKAO-Qg6E81i_OMCSql2kcLGz03zV4&libraries=places&callback=initMap">
+              </script>
+            -->
+            </section>
+            <div class="recent-travelers"><div class="traveler-head">Your friends have recently visited...</div>
+            <div class="traveler"><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Krish"></span><span class="traveler-name">Krishna</span>
+              <div class="traveler-place">Bressuls, Belgium</div>
+            </div>
+            <div class="traveler"><span class="traveler-close-btn">X</span><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Har"></span><span class="traveler-name">Harkamal</span>
+              <div class="traveler-place">Copenhagen, Denmark</div>
+            </div>
+            <div class="traveler"><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Vipin"></span><span class="traveler-name">Vipin</span>
+              <div class="traveler-place">Kerala, India</div>
+            </div>
+            <div class="traveler"><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Krish"></span><span class="traveler-name">Rajesh</span>
+              <div class="traveler-place">Bressuls, Belgium</div>
+            </div>
+            <div class="traveler"><span class="traveler-close-btn">X</span><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Har"></span><span class="traveler-name">Mahesh</span>
+              <div class="traveler-place">Copenhagen, Denmark</div>
+            </div>
+            <div class="traveler"><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Vipin"></span><span class="traveler-name">Vipin</span>
+              <div class="traveler-place">Paris, France</div>
+            </div>
+            <div class="traveler"><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Krish"></span><span class="traveler-name">Sumesh</span>
+              <div class="traveler-place">Bressuls, Belgium</div>
+            </div>
+            <div class="traveler"><span class="traveler-close-btn">X</span><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Har"></span><span class="traveler-name">Harmesh</span>
+              <div class="traveler-place">Oslo, Norway</div>
+            </div>
+            <div class="traveler"><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Vipin"></span><span class="traveler-name">Subin</span>
+              <div class="traveler-place">Tamilnadu, India</div>
+            </div>
+            <div class="traveler"><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Krish"></span><span class="traveler-name">Sujesh</span>
+              <div class="traveler-place">Dubai</div>
+            </div>
+            <div class="traveler"><span class="traveler-close-btn">X</span><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Har"></span><span class="traveler-name">Sajesh</span>
+              <div class="traveler-place">Rom, Italy</div>
+            </div>
+            <div class="traveler"><span class="traveler-close-btn">X</span>
+              <span class="traveler-pic"><img class="profilepic" src="img/profilepic.png" title="Vipin"></span><span class="traveler-name">Mujeeb</span>
+              <div class="traveler-place">Delhi, India</div>
+            </div>
+
+          </div>
+
+
+        </div>
+
+        <div  class="footer fw text-center"><div class="copy">Travel trace by adeda &copy 2017</div></div>
+
+      </body>
+      </html>

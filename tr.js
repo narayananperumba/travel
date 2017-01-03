@@ -1,39 +1,75 @@
 var map,infoWindow;
 var markers = [];
-var markersData = [
-  {
-      lat: 40.6386333,
-      lng: -8.745,
-      name: "Camping Praia da Barra",
-      address1:"Rua Diogo Cão, 125",
-      address2: "Praia da Barra",
-      postalCode: "3830-772 Gafanha da Nazaré"
-   },
-   {
-      lat: 40.59955,
-      lng: -8.7498167,
-      name: "Camping Costa Nova",
-      address1:"Quinta dos Patos, n.º 2",
-      address2: "Praia da Costa Nova",
-      postalCode: "3830-453 Gafanha da Encarnação"
-   },
-   {
-      lat: 40.6247167,
-      lng: -8.7129167,
-      name: "Camping Gafanha da Nazaré",
-      address1:"Rua dos Balneários do Complexo Desportivo",
-      address2: "Gafanha da Nazaré",
-      postalCode: "3830-225 Gafanha da Nazaré"
-   },
-   {
-      lat: 11.8744775,
-      lng: 75.3703662,
-      name: "Kannur",
-      address1:"Kerala",
-      address2: "India",
-      postalCode: "670 501 Cheruthazham"
-   }
-];
+var markersData = [];
+$(document).ready(function() {
+$("#listCloseBtn").bind('click',function(){
+  $(".left-box").slideToggle('up');
+});
+//recent visted place of buddies
+$(document).on( 'click', '#visitorSwitch', function(){
+  $(".recent-travellers-list").slideToggle();
+});
+
+$(document).on( 'click', '.traveller-close-btn', function(){
+  $(this).parent().hide();
+});
+
+$(".prof-settings").on('click',function(e){
+  
+  if($(".left-box").css('display') == 'none')
+    $(".left-box").slideDown();
+  
+  var childClass = "."+$(this).attr('data-value');
+  
+  $(".left-box-child").siblings(':not('+childClass+')').hide();
+  //if($(childClass).css('display') == 'none')
+    $(childClass).slideToggle();
+  //else
+    //$(childClass).slideUp();
+
+});
+$.getJSON( "db.json", function(data) {
+  markersData = data["users"][0].locations;
+  if(markersData.length > 0) {
+    displayMarkers();
+  
+  var myPlaces = '';
+    markersData.forEach(function(places) {
+      myPlaces+= '<div class="listitem">'+places["name"]+', '+ places["country"]+'</div>';
+    });
+    $('.listitems').append(myPlaces);
+
+    var friendsData = data["users"][0].friends;
+
+    var friendsStr = '';
+    var visitorStr = '';
+
+    friendsData.forEach(function(friend) {
+      friendsStr+= '<div class="traveller-friend"><span class="traveller-pic"><img class="profilepic" src="img/profilepic.png" title="' + friend["name"] + ', ' + friend["country"] + '"></span><span class="traveller-name">'+friend["name"]+'</span></div>';
+
+      var visitorData = friend['recent-locations'];
+      var visitorPlace = '';
+      if(visitorData != undefined) {
+      visitorData.forEach(function(visited) {
+        visitorPlace += '('+visited['location'] +', '+ visited['country'] + ') ';
+      });
+
+      visitorStr += '<div class="traveller"><span class="traveller-close-btn">X</span><span class="traveller-pic"><img class="profilepic" src="img/profilepic.png" title="' + friend["name"] + '"></span><span class="traveller-name">' + friend["name"] + '</span><div class="traveller-place">' + visitorPlace + '</div></div>';
+      }
+
+    });
+    $('.friends-list').append(friendsStr);
+    $('.recent-travellers-list').html(visitorStr);
+
+    
+  }
+    
+});
+
+
+});
+
+
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -43,10 +79,20 @@ function initMap() {
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
       position: google.maps.ControlPosition.TOP_RIGHT
-    }
+    },
+    zoomControl: true,
+      zoomControlOptions: {
+      position: google.maps.ControlPosition.RIGHT_CENTER
+    },
+    scaleControl: true,
+      streetViewControl: true,
+      streetViewControlOptions: {
+      position: google.maps.ControlPosition.RIGHT_CENTER
+    },
+    fullscreenControl: true
   });
 
-  infoWindow = new google.maps.InfoWindow({map: map});
+  infoWindow = new google.maps.InfoWindow();
 
 // Create the search box and link it to the UI element.
 var input = document.getElementById('pac-input');
@@ -57,8 +103,6 @@ map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 map.addListener('bounds_changed', function() {
   searchBox.setBounds(map.getBounds());
 });
-
-displayMarkers();
 
 
 // Listen for the event fired when the user selects a prediction and retrieve
@@ -109,7 +153,7 @@ searchBox.addListener('places_changed', function() {
   map.fitBounds(bounds);
 });
 
-/*//Try HTML5 geolocation.
+//Try HTML5 geolocation.
 if (navigator.geolocation) {
 
   navigator.geolocation.getCurrentPosition(function(position) {
@@ -118,6 +162,7 @@ if (navigator.geolocation) {
       lng: position.coords.longitude
     };
 
+    infoWindow.open(map,map);
     infoWindow.setPosition(pos);
     infoWindow.setContent('Location found.');
     map.setCenter(pos);
@@ -127,7 +172,7 @@ if (navigator.geolocation) {
 } else {
   // Browser doesn't support Geolocation
   handleLocationError(false, infoWindow, map.getCenter());
-}*/
+}
 
 }
 
@@ -192,25 +237,3 @@ function createMarker(latlng, name, address1, address2, postalCode) {
       infoWindow.open(map, marker);
    });
 }
-$(document).ready(function() {
-$("#listCloseBtn").bind('click',function(){
-  $(".left-box").slideToggle('up');
-});
-$(".traveler-close-btn").bind('click',function(e){
-  $(this).parent().hide();
-});
-$(".prof-settings").on('click',function(e){
-  
-  if($(".left-box").css('display') == 'none')
-    $(".left-box").slideDown();
-  
-  var childClass = "."+$(this).attr('data-value');
-  
-  $(".left-box-child").siblings(':not('+childClass+')').hide();
-  //if($(childClass).css('display') == 'none')
-    $(childClass).slideToggle();
-  //else
-    //$(childClass).slideUp();
-
-});
-});

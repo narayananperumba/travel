@@ -1,83 +1,121 @@
 {
-	"mathem": [{
-		"startpage": {
-			"url": "https://www.mathem.se",
-			"method": "get"
+"users": [{
+		"id": 1,
+		"name": "Narayanan Perumba",
+		"locations": [{
+			"lat": 48.856614,
+			"lng": 2.352222,
+			"name": "Paris",
+			"address1":"Rua Diogo Cão, 125",
+			"address2": "Praia da Barra",
+			"postalCode": "3830-772 Gafanha da Nazaré",
+			"country": "France"
 		},
-		"add_location": {
-			"url": "https://www.mathem.se/Banner/ValidatePostalCode?PostalCode=",
-			"method": "get",
-			"param":["PostalCode"]
+		{
+			"lat": 50.850346,
+			"lng": 4.351721,
+			"name": "Brussels",
+			"address1":"Some where",
+			"address2": "Belgium",
+			"postalCode": "3830-772 Gafanha da Nazaré",
+			"country": "Belgium"
 		},
-		"add_to_cart": {
-			"url": "https://www.mathem.se/Pages/products/AddToCart.aspx?AddProduct=true",
-			"method": "get",
-			"param": ["ProductID","noOfFooditem"],
-			"products":["118272","15168","118272","15168","118272","15168","118272","15168","118272","15168","118272","15168"]
+		{
+			"lat": 55.676097,
+			"lng": 12.568337,
+			"name": "Copenhagen",
+			"address1":"Rua Diogo Cão, 125",
+			"address2": "Denmark",
+			"postalCode": "3830-772 Gafanha da Nazaré",
+			"country": "Denmark"
 		},
-		"checkout": {
-			"url": "",
-			"method": "get"
+		{
+			"lat": 11.8744775,
+			"lng": 75.3703662,
+			"name": "Kannur",
+			"address1":"Rua Diogo Cão, 125",
+			"address2": "Kerala",
+			"postalCode": "670501 Gafanha da Nazaré",
+			"country": "India"
 		},
-		"delete_item":{
-			"url":"https://www.mathem.se/ShoppingCart/Delete",
-			"method":"get"
-			},
-		"empty_cart": {
-			"url": "https://www.mathem.se/ShoppingCart/EmptyShoppingCart",
-			"method": "get"
-		}
-	}],
-	"coop":[{
-		"startpage": {
-			"url": "https://www.coop.se/",
-			"method": "get"
+		{
+			"lat": 59.436961,
+			"lng": 24.753575,
+			"name": "Tallinn",
+			"address1":"Rua Diogo Cão, 125",
+			"address2": "Estonia",
+			"postalCode": "670501 Gafanha da Nazaré",
+			"country": "Estonia"
 		},
-		"add_location": {
-			"url": "https://www.coop.se/handla-online/varukorg/?method=PostalCodeDialogAction",
-			"method": "post",
-			"format": "json",
-			"post": {
-				"heroSpace": "true",
-				"postalCode": "${zipcode}"
-			}
+		{
+			"lat": 47.376887,
+			"lng": 8.541694,
+			"name": "Winterthur",
+			"address1":"Zurich",
+			"address2": "Switzerland",
+			"postalCode": "12345 Gafanha da Nazaré",
+			"country": "Switzerland"
 		},
-		"add_to_cart": {
-			"url": "https://www.coop.se/handla-online/varor/ost/frukost/latt/${id}/?buy=true",
-			"method": "get",
-			"products": []
+		{
+			"lat": 49.425409,
+			"lng": 11.079655,
+			"name": "Erlangen",
+			"address1":"Nuremberg",
+			"address2": "Germany",
+			"postalCode": "12345 Gafanha da Nazaré",
+			"country": "Germany"
+		}],
+		"friends": [{
+			"name": "Adriyan Dizuza",
+			"country": "England",
+			"recent-locations":[{
+				"location":"Paris",
+				"country":"France"
+				},
+				{
+				"location":"Brusslels",
+				"country":"Belgium"
+				}]
 		},
-		"checkout": {
-			"url": "https://www.coop.se/handla-online/varukorg/",
-			"method": "get"
+		{
+			"name": "Edmand Tutu",
+			"country": "France",
+			"recent-locations":[{
+				"location":"Paris",
+				"country":"France"
+				},
+				{
+				"location":"Brusslels",
+				"country":"Belgium"
+				}]
 		},
-		"empty_cart": {
-			"url": "https://www.coop.se/handla-online/varukorg/",
-			"method": "post",
-			"format": "json",
-			"post": {
-				"method": "EmptyCart"
-			}
-		}
-	}],
-	"mat":[{
-		"startpage": {
-			"url": "https://www.mat.se/",
-			"method": "get"
+		{
+			"name": "Isac newton",
+			"country": "Greese",
+			"recent-locations":[{
+				"location":"Paris",
+				"country":"France"
+				},
+				{
+				"location":"Brusslels",
+				"country":"Belgium"
+				}]
 		},
-		"add_to_cart": {
-			"url": "https://www.mat.se/g/shoppingCart/addToShoppingCart",
-			"method": "post",
-			"template":"/product/showBuyOrUpdateButtons",
-			"products": [{"productId":"535"},{"productId":"535"},{"productId":"535"},{"productId":"535"}]
+		{
+			"name": "M Edisson",
+			"country": "USA",
+			"recent-locations":[{
+				"location":"Paris",
+				"country":"France"
+				},
+				{
+				"location":"Brusslels",
+				"country":"Belgium"
+				}]
 		},
-		"checkout": {
-			"url": "http://www.mat.se/reviewCart.html",
-			"method": "get"
-		},
-		"empty_cart": {
-			"url": "http://www.mat.se/g/shoppingCart/emptyShoppingCart",
-			"method": "get"
-		}
+		{
+			"name": "M Faraday",
+			"country": "Brazil"
+		}]
 	}]
 }

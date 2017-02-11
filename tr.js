@@ -57,6 +57,11 @@ $(".prof-settings").on('click',function(e){
     //$(childClass).slideUp();
 
 });
+
+
+});
+
+function drawData(){
 $.getJSON( "db.json", function(data) {
   markersData = data["users"][0].locations;
   if(markersData.length > 0) {
@@ -83,7 +88,7 @@ $.getJSON( "db.json", function(data) {
         visitorPlace += '('+visited['location'] +', '+ visited['country'] + ') ';
       });
 
-      visitorStr += '<div class="traveller"><span class="traveller-close-btn">X</span><span class="traveller-pic"><img class="profilepic" src="img/profilepic.png" title="' + friend["name"] + '"></span><span class="traveller-name">' + friend["name"] + '</span><div class="traveller-place">' + visitorPlace + '</div></div>';
+      visitorStr += '<div class="traveller"><span class="traveller-close-btn">X</span><div class="traveller-pic"><img class="profilepic" src="img/profilepic.png" title="' + friend["name"] + '"></div><div class="traveller-name">' + friend["name"] + '</div><div class="traveller-place">' + visitorPlace + '</div></div>';
       }
 
     });
@@ -94,16 +99,13 @@ $.getJSON( "db.json", function(data) {
   }
     
 });
-
-
-});
-
-
+}
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 0, lng: 0},
     zoom: 2,
+    mapTypeId: 'satellite',
     mapTypeControl: true,
     mapTypeControlOptions: {
       style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
@@ -202,7 +204,7 @@ if (navigator.geolocation) {
   // Browser doesn't support Geolocation
   handleLocationError(false, infoWindow, map.getCenter());
 }
-
+drawData();
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {

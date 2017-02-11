@@ -156,9 +156,9 @@ text-align: center;
   padding: 5px 0;
 }
 .listhead,.traveller-head{
-  font-size: 12px;
+  font-size: 0.8em;
   color: #79C34C;
-  padding: 5px;
+  padding: 10px;
   text-align: left;
 }
 
@@ -166,8 +166,8 @@ text-align: center;
 color: #464646;
 }
 .listitem{
-  font-size: 12px;
-  padding: 5px;
+  font-size: 0.8em;
+  padding: 10px;
   border: 1px solid #F5F5F5;
   cursor: pointer;
 }
@@ -190,10 +190,10 @@ border: 1px solid #F39C12;
   box-shadow: 2px 2px 5px 0px rgba(61,61,61,1);
 }
 .recent-travellers {
-  background-color: rgba(0, 0, 0, 0.6);
+  /*background-color: rgba(0, 0, 0, 0.6);*/
   position: absolute;
   bottom: 2px;
-  left: 2px;
+  /*left: 2px;*/
   right: 2px;
   width: auto;
   height: auto;
@@ -203,10 +203,9 @@ border: 1px solid #F39C12;
   font-size: 14px;
   overflow: hidden;
   border-radius:2px;
-  max-height: 100px;
+  max-height: 150px;
 }
 .traveller{
-  border: 1px solid #fafafa;
   border-radius: 2px;
   width: auto;
   padding: 5px;
@@ -215,23 +214,25 @@ border: 1px solid #F39C12;
   cursor: pointer;
   transition: all 0.5s ease 0s;
   position: relative;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.36);
+  font-size: 0.9em;
 }
 .traveller:hover{
   background-color: rgba(0, 0, 0, 0.2);
 }
 .traveller-name{
-  padding: 5px;
+  padding: 3px;
   color: #B55E03;
 }
 .traveller-place{
-  padding: 5px;
+  padding: 3px;
   color: #4D90FE; 
   width: 150px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   display: block;
-  font-size: 12px;
 }
 .traveller-close-btn{
   color: #ccc;

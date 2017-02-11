@@ -1,3 +1,32 @@
+$(document).ready(function() {
+$("#listCloseBtn").bind('click',function(){
+  $(".left-box").slideToggle('up');
+});
+$(".traveler-close-btn").bind('click',function(e){
+  $(this).parent().hide();
+});
+$(".prof-settings").on('click',function(e){
+  
+  if($(".left-box").css('display') == 'none')
+    $(".left-box").slideDown();
+  
+  var childClass = "."+$(this).attr('data-value');
+  
+  $(".left-box-child").siblings(':not('+childClass+')').hide();
+  //if($(childClass).css('display') == 'none')
+    $(childClass).slideToggle();
+  //else
+    //$(childClass).slideUp();
+
+});
+
+
+$.getJSON('json/db.json', function(data) {
+
+  console.log(data);
+});
+});
+
 var map,infoWindow;
 var markers = [];
 var markersData = [
@@ -192,25 +221,3 @@ function createMarker(latlng, name, address1, address2, postalCode) {
       infoWindow.open(map, marker);
    });
 }
-$(document).ready(function() {
-$("#listCloseBtn").bind('click',function(){
-  $(".left-box").slideToggle('up');
-});
-$(".traveler-close-btn").bind('click',function(e){
-  $(this).parent().hide();
-});
-$(".prof-settings").on('click',function(e){
-  
-  if($(".left-box").css('display') == 'none')
-    $(".left-box").slideDown();
-  
-  var childClass = "."+$(this).attr('data-value');
-  
-  $(".left-box-child").siblings(':not('+childClass+')').hide();
-  //if($(childClass).css('display') == 'none')
-    $(childClass).slideToggle();
-  //else
-    //$(childClass).slideUp();
-
-});
-});

@@ -1,0 +1,121 @@
+{
+"users": [{
+		"id": 1,
+		"name": "Narayanan Perumba",
+		"locations": [{
+			"lat": 48.856614,
+			"lng": 2.352222,
+			"name": "Paris",
+			"address1":"Rua Diogo Cão, 125",
+			"address2": "Praia da Barra",
+			"postalCode": "3830-772 Gafanha da Nazaré",
+			"country": "France"
+		},
+		{
+			"lat": 50.850346,
+			"lng": 4.351721,
+			"name": "Brussels",
+			"address1":"Some where",
+			"address2": "Belgium",
+			"postalCode": "3830-772 Gafanha da Nazaré",
+			"country": "Belgium"
+		},
+		{
+			"lat": 55.676097,
+			"lng": 12.568337,
+			"name": "Copenhagen",
+			"address1":"Rua Diogo Cão, 125",
+			"address2": "Denmark",
+			"postalCode": "3830-772 Gafanha da Nazaré",
+			"country": "Denmark"
+		},
+		{
+			"lat": 11.8744775,
+			"lng": 75.3703662,
+			"name": "Kannur",
+			"address1":"Rua Diogo Cão, 125",
+			"address2": "Kerala",
+			"postalCode": "670501 Gafanha da Nazaré",
+			"country": "India"
+		},
+		{
+			"lat": 59.436961,
+			"lng": 24.753575,
+			"name": "Tallinn",
+			"address1":"Rua Diogo Cão, 125",
+			"address2": "Estonia",
+			"postalCode": "670501 Gafanha da Nazaré",
+			"country": "Estonia"
+		},
+		{
+			"lat": 47.376887,
+			"lng": 8.541694,
+			"name": "Winterthur",
+			"address1":"Zurich",
+			"address2": "Switzerland",
+			"postalCode": "12345 Gafanha da Nazaré",
+			"country": "Switzerland"
+		},
+		{
+			"lat": 49.425409,
+			"lng": 11.079655,
+			"name": "Erlangen",
+			"address1":"Nuremberg",
+			"address2": "Germany",
+			"postalCode": "12345 Gafanha da Nazaré",
+			"country": "Germany"
+		}],
+		"friends": [{
+			"name": "Adriyan Dizuza",
+			"country": "England",
+			"recent-locations":[{
+				"location":"Paris",
+				"country":"France"
+				},
+				{
+				"location":"Brusslels",
+				"country":"Belgium"
+				}]
+		},
+		{
+			"name": "Edmand Tutu",
+			"country": "France",
+			"recent-locations":[{
+				"location":"Paris",
+				"country":"France"
+				},
+				{
+				"location":"Brusslels",
+				"country":"Belgium"
+				}]
+		},
+		{
+			"name": "Isac newton",
+			"country": "Greese",
+			"recent-locations":[{
+				"location":"Paris",
+				"country":"France"
+				},
+				{
+				"location":"Brusslels",
+				"country":"Belgium"
+				}]
+		},
+		{
+			"name": "M Edisson",
+			"country": "USA",
+			"recent-locations":[{
+				"location":"Paris",
+				"country":"France"
+				},
+				{
+				"location":"Brusslels",
+				"country":"Belgium"
+				}]
+		},
+		{
+			"name": "M Faraday",
+			"country": "Brazil"
+		}]
+	}]
+}

@@ -36,6 +36,14 @@ z-index: 100;
     display: inline-block;
     margin: 2px;
 }
+.logo-container1 .logoiv{
+    width:42px;
+    height:60px;
+    background: url("../img/iv.png") no-repeat;
+    background-size: cover;
+    display: inline-block;
+    margin: 2px 5px;
+}
 .align-center {
 margin: 0px auto;
 }
@@ -123,13 +131,12 @@ text-align: center;
     left: 0;
     top: 0;
     height: auto;
-    background: #fff;
     z-index: 2;
+    color: #fff;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(61,61,61,1);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(61,61,61,1);
+    box-shadow: 2px 2px 5px 0px rgba(61,61,61,1);
 }
-/*.left-box{
-  background: url('../img/wall.jpg');
-  background-size: cover;
-}*/
 .list{
   position: relative;
 }
@@ -147,7 +154,7 @@ text-align: center;
   margin: 14px; 
 }
 .profile-head {
-  background: #79C34C;
+  background: rgba(121, 195, 76, 0.25); /*#79C34C;*/
   height: 75px;
   width: 200px;
   padding-left: 85px;
@@ -160,26 +167,22 @@ text-align: center;
   color: #79C34C;
   padding: 10px;
   text-align: left;
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .listitems{
-color: #464646;
+color: #fff;
 }
 .listitem{
   font-size: 0.8em;
   padding: 10px;
-  border: 1px solid #F5F5F5;
+  background: rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid #636363;
   cursor: pointer;
 }
 .listitem:hover{
-background: #F39C12;
+background: transparent;
 color: #fff;
-border: 1px solid #F39C12; 
-}
-.left{
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(61,61,61,1);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(61,61,61,1);
-  box-shadow: 2px 2px 5px 0px rgba(61,61,61,1);
 }
 .profilepic{
   cursor: pointer;
